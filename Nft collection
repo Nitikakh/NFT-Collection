@@ -1,0 +1,35 @@
+const nfts = [];
+
+function mintNFT(nft_no, title, creation_details, engaging_feat) {
+    const metadata = {
+        nft_no: nft_no,
+        title: title,
+        creation_details: creation_details,
+        engaging_feat: engaging_feat
+    };
+
+    nfts.push(metadata);
+}
+
+function listNFTs() {
+    let i = 0;
+    while (i < nfts.length) {
+        console.log("NFT No. " + (i + 1) );
+        console.log("Title: " + nfts[i].title);
+        console.log("Creation Details: " + nfts[i].creation_details);
+        console.log("Engaging Features: " + nfts[i].engaging_feat);
+        console.log();
+        i++;
+    }
+}
+
+function getTotalSupply() {
+    console.log("Total Number of NFTs: " + nfts.length);
+}
+
+mintNFT(1, "Meme", "Funny meme creation", "Animated GIFs");
+mintNFT(2, "Song", "Original music composition", "Dynamic visuals");
+mintNFT(3, "Art", "Abstract Painting", "Geometric Abstraction");
+
+listNFTs();
+getTotalSupply();
